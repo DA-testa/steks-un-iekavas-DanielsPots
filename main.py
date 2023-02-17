@@ -28,11 +28,9 @@ def find_mismatch(text):
 
 def main():
     input_type = input("Choose '0-5' to select a test or 'I' to input brackets: ")
-    test_number = None
     if input_type.isdigit() and int(input_type) in range(6):
         test_number = input_type
-    if test_number:
-        test_path = f"./workspaces/steks-un-iekavas-DanielsPots/test/{test_number}"
+        test_path = "/workspaces/steks-un-iekavas-DanielsPots/test/" + test_number
         with open (test_path, "r") as f:
             text = f.read()
     elif input_type == "I":
