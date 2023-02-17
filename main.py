@@ -27,23 +27,21 @@ def find_mismatch(text):
         return "Success"
 
 def main():
-    source = input("Choose 'F' to select a file or 'I' to input brackets: ")
-    if source.lower() == 'f':
-        file_path = input("Enter file path: ")
-        try:
-            with open(file_path, 'r') as f:
-                text = f.read()
-                mismatch = find_mismatch(text)
-                print(mismatch)
-        except FileNotFoundError:
-            print("File not found")
-    elif source.lower() == 'i':
+    input_type = input("Choose 'F' to select a test or 'I' to input brackets: ")
+    if input_type == 'F':
+        test_number = input("Enter test number (0-5): ")
+        test_path = "/workspaces/steks-un-iekavas-DanielsPots/test/" + test_number
+        with open (test_path, "r") as f:
+            text = f.read()
+    elif input_type == "I":
         text = input("Enter brackets: ")
-        mismatch = find_mismatch(text)
-        print(mismatch)
     else:
-        print("Invalid input. Choose 'F' or 'I'.")
+        print("Invalid input type")
+        return
 
+    mismatch = find_mismatch(text)
+    print(mismatch)
+    
 
 if __name__ == "__main__":
     main()
