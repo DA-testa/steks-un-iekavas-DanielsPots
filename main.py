@@ -28,15 +28,15 @@ def find_mismatch(text):
 
 def main():
     input_type = input("Choose '0-5' to select a test or 'I' to input brackets: ")
-    if input_type.isdigit() and int(input_type) in range(6):
-        test_number = input_type
-        test_path = "/workspaces/steks-un-iekavas-DanielsPots/test/" + test_number
-        with open (test_path, "r") as f:
-            text = f.read()
-    elif input_type == "I":
+    #if input_type.isdigit() and int(input_type) in range(6):
+        #test_number = input_type
+        #test_path = "/workspaces/steks-un-iekavas-DanielsPots/test/" + test_number
+        #with open (test_path, "r") as f:
+            #text = f.read()
+    if input_type == "I":
         text = input("Enter brackets: ")
     else:
-        print("Invalid input type")
+        text = input()
         return
 
     mismatch = find_mismatch(text)
