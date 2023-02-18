@@ -24,7 +24,7 @@ def find_mismatch(text):
     if opening_brackets_stack:
         return opening_brackets_stack[0].position
     else:
-        return "Success"
+        return 0
 
 def main():
     #input_type = input("Choose '0-5' to select a test or 'I' to input brackets: ")
@@ -41,7 +41,10 @@ def main():
         return
 
     mismatch = find_mismatch(text)
-    print(mismatch)
+    if mismatch == 0:
+        print("Success")
+    else:
+         print(mismatch)
     
 
 if __name__ == "__main__":
