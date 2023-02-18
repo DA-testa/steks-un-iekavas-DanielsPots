@@ -33,6 +33,7 @@ def main():
         #test_path = "/workspaces/steks-un-iekavas-DanielsPots/test/" + test_number
         #with open (test_path, "r") as f:
             #text = f.read()
+    input_type = input()
     if input_type == "I":
         text = input("Enter brackets: ")
     else:
