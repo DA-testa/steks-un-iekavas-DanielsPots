@@ -24,27 +24,24 @@ def find_mismatch(text):
     if opening_brackets_stack:
         return opening_brackets_stack[0].position
     else:
-        return 0
+        return "Success"
 
 def main():
-    #input_type = input("Choose '0-5' to select a test or 'I' to input brackets: ")
-    #if input_type.isdigit() and int(input_type) in range(6):
-        #test_number = input_type
-        #test_path = "/workspaces/steks-un-iekavas-DanielsPots/test/" + test_number
-        #with open (test_path, "r") as f:
-            #text = f.read()
-    input_type = input()
-    if input_type == "I":
+    input_type = input().strip()
+    if input_type.isdigit() and int(input_type) in range(6):
+        test_number = input_type
+        test_path = "/workspaces/steks-un-iekavas-DanielsPots/test/" + test_number
+        with open (test_path, "r") as f:
+            text = f.read().strip()
+    elif input_type == "I":
         text = input("Enter brackets: ")
     else:
-        text = input()
+        print("Invalid input type")
         return
 
     mismatch = find_mismatch(text)
-    if mismatch == 0:
-        print("Success")
-    else:
-        print(mismatch)
+    print(mismatch)
+    
 
 if __name__ == "__main__":
     main()
